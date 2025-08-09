@@ -31,7 +31,78 @@ class ProductListPage extends StatefulWidget {
 }
 
 class _ProductListPageState extends State<ProductListPage> {
-  final List<Product> _list = [];
+  final List<Product> _list = [
+    Product(
+      title: 'Apple',
+      summary: 'Fresh red apple',
+      price: 1200,
+      desc: 'Delicious and juicy red apple from the farm',
+      color: Colors.red,
+    ),
+    Product(
+      title: 'Banana',
+      summary: 'Sweet banana',
+      price: 800,
+      desc: 'Rich in potassium and perfect for breakfast',
+      color: Colors.yellow,
+    ),
+    Product(
+      title: 'Orange',
+      summary: 'Citrus orange',
+      price: 1500,
+      desc: 'Vitamin C rich orange for healthy lifestyle',
+      color: Colors.orange,
+    ),
+    Product(
+      title: 'Grapes',
+      summary: 'Seedless grapes',
+      price: 2000,
+      desc: 'Sweet and seedless grapes perfect for snacking',
+      color: Colors.purple,
+    ),
+    Product(
+      title: 'Watermelon',
+      summary: 'Large watermelon',
+      price: 5000,
+      desc: 'Perfect for summer, juicy and refreshing watermelon',
+      color: Colors.green,
+    ),
+    Product(
+      title: 'Strawberry',
+      summary: 'Fresh strawberry',
+      price: 2500,
+      desc: 'Sweet and sour strawberry rich in vitamin C',
+      color: Colors.pink,
+    ),
+    Product(
+      title: 'Peach',
+      summary: 'Soft peach',
+      price: 1800,
+      desc: 'Soft and fragrant peach with sweet taste',
+      color: Colors.yellow,
+    ),
+    Product(
+      title: 'Mango',
+      summary: 'Tropical mango',
+      price: 3000,
+      desc: 'Sweet tropical mango full of flavor',
+      color: Colors.amber,
+    ),
+    Product(
+      title: 'Blueberry',
+      summary: 'Healthy blueberry',
+      price: 3500,
+      desc: 'Antioxidant-rich blueberry for healthy diet',
+      color: Colors.blue,
+    ),
+    Product(
+      title: 'Pineapple',
+      summary: 'Juicy pineapple',
+      price: 4000,
+      desc: 'Tropical and juicy pineapple with sweet taste',
+      color: Colors.brown,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -98,33 +169,12 @@ class Product {
   String summary;
   int price;
   String desc;
+  Color color;
   Product({
     required this.title,
     required this.summary,
     required this.price,
     required this.desc,
+    required this.color,
   });
-
-  Map<String, dynamic> toMap() {
-    return <String, dynamic>{
-      'title': title,
-      'summary': summary,
-      'price': price,
-      'desc': desc,
-    };
-  }
-
-  factory Product.fromMap(Map<String, dynamic> map) {
-    return Product(
-      title: map['title'] as String,
-      summary: map['summary'] as String,
-      price: map['price'] as int,
-      desc: map['desc'] as String,
-    );
-  }
-
-  String toJson() => json.encode(toMap());
-
-  factory Product.fromJson(String source) =>
-      Product.fromMap(json.decode(source) as Map<String, dynamic>);
 }
